@@ -1,0 +1,9 @@
+{
+  "env":{
+    "PORT": 4000,
+    "AWS_ACCESS_KEY_ID": "<_xxxx_>",
+    "AWS_SECRET_KEY": "<_xxxx_>",
+    "AWS_BUCKET_NAME": "<_xxxx_>",
+    "AWS_REGION": "<_xxxx_>"
+  }
+}
