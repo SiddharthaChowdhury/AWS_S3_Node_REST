@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "6c8fac14-05ae-4897-8195-b8bf2136a6fe",
+		"name": "file upload",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "upload file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Encoding",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "input_files",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4000/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete file",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fileKeys\": [\"public_asset/a5ecae22-8106-4bca-ba08-688e5662b36d.jpg\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/remove",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list files in folder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/list?folderName=public_asset",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"list"
+					],
+					"query": [
+						{
+							"key": "folderName",
+							"value": "public_asset"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

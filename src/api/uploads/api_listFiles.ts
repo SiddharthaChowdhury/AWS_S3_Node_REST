@@ -1,6 +1,5 @@
 import {Request, Response} from "express";
 import {S3} from "./uploadSetup";
-import * as AWSs3 from "aws-sdk/clients/s3";
 
 const api_ListFiles = (req: Request, res: Response) => {
     const {folderName} = req.query;
@@ -16,8 +15,7 @@ const api_ListFiles = (req: Request, res: Response) => {
     };  
     S3.listObjectsV2(listParams, function(err, data) {
         if (err) throw err;
-
-        res.status(200);
+        
         if(data.Contents && data.Contents.length > 0) {
                                                 
             const fileObjArr: any[] = [];
@@ -34,6 +32,8 @@ const api_ListFiles = (req: Request, res: Response) => {
             data.Contents = fileObjArr;
 
         }
+
+        res.status(200);
         return res.json({data});
     });
 }
